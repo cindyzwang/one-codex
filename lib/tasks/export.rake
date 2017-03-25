@@ -38,8 +38,7 @@ namespace :export do
       line = line.gsub(/[(\t)(\n)]/, '').split('|')
       child_id = line[0]
       parent_id = line[1]
-      puts "c = ChildParent.create(id: #{child_id}, parent_id: #{parent_id})"
-      puts "ScientificName.find_by(taxonomy_id: #{child_id}).parent_id = c.parent_id"
+      puts "ChildParent.create(id: #{child_id}, parent_id: #{parent_id})"
     end
   end
 end

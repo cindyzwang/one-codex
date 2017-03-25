@@ -2,7 +2,6 @@ class CreateScientificNames < ActiveRecord::Migration[5.0]
   def change
     create_table :scientific_names, {id: false} do |t|
       t.integer :taxonomy_id, null: false
-      t.integer :parent_id
       t.string :name, null: false
       t.timestamps
     end
