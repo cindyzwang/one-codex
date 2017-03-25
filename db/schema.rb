@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170324184222) do
     t.datetime "updated_at",         null: false
   end
 
-  create_table "scientific_names", force: :cascade do |t|
+  create_table "scientific_names", primary_key: "taxonomy_id", id: :integer, force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

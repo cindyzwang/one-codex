@@ -1,3 +1,4 @@
 class ScientificName < ApplicationRecord
-  has_many :nick_name
+  self.primary_key = :taxonomy_id
+  has_many :nick_names
 end
