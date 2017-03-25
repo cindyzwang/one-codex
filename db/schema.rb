@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324184222) do
+ActiveRecord::Schema.define(version: 20170325060043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "child_parents", primary_key: "child_id", id: :integer, force: :cascade do |t|
+    t.integer  "parent_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "nick_names", force: :cascade do |t|
     t.string   "name"

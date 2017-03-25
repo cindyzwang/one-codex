@@ -8,7 +8,7 @@ nodes.dmp file consists of taxonomy nodes. The description for each node include
 fields:
 	tax_id					-- node id in GenBank taxonomy database
  	parent tax_id				-- parent node id in GenBank taxonomy database
- 	rank					-- rank of this node (superkingdom, kingdom, ...) 
+ 	rank					-- rank of this node (superkingdom, kingdom, ...)
  	embl code				-- locus-name prefix; not unique
  	division id				-- see division.dmp file
  	inherited div flag  (1 or 0)		-- 1 if node inherits division from parent
