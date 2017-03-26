@@ -3,7 +3,7 @@ require 'pry'
 class ChildParent < ApplicationRecord
   self.primary_key = :child_id
 
-  validate :child_id, :parent_id
+  validate :child_id, :parent_id, :rank
   after_initialize :make_ancestry
 
   private

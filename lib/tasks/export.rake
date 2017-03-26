@@ -1,16 +1,19 @@
-# TODO: optimize line splitting
+# TODO: optimize line splitting:
+# Field terminator is "\t|\t"; Row terminator is "\t|\n"
+# I wanted to split on those terminators because doing a gsub then a split means I parse it 2x
+# but the array ends up with a bunch of empty strings...
+# ...line.include?(arg) has to search through more elements
+
+
 
 namespace :export do
-  desc "seed database with names and relationships"
+  desc "seed database with names, nodes, and relationships"
   task :seed_data => :environment do
     current_id = "1"
     n_names = []
 
-    # Field terminator is "\t|\t"; Row terminator is "\t|\n"
+
     File.open(Rails.root.join('lib', 'assets', 'taxdmp', 'abbrev-names.dmp'), 'r').each do |line|
-      # I wanted to split on those terminators so because doing a gsub then a split means I parse it 2x
-      # but the array ends up with a bunch of empty strings...
-      # ...line.include?(arg) has to search through more elements
       line.gsub!("'", %q"\\\'")
       line.gsub!(/[(\t)(\n)]/, '')
       line = line.split('|')
@@ -38,7 +41,8 @@ namespace :export do
       line = line.gsub(/[(\t)(\n)]/, '').split('|')
       child_id = line[0]
       parent_id = line[1]
-      puts "ChildParent.create(id: #{child_id}, parent_id: #{parent_id})"
+      rank = line[2]
+      puts %Q[ChildParent.create(id: #{child_id}, parent_id: #{parent_id}, rank: '#{rank}')]
     end
   end
 end

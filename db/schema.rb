@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170325063417) do
 
   create_table "child_parents", primary_key: "child_id", id: :integer, force: :cascade do |t|
     t.integer  "parent_id",  null: false
+    t.string   "rank",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

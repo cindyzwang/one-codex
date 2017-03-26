@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :taxonomy, only: [:show]
-    resources :taxonomy_search, only: [:index]
+    resources :taxonomy_search, only: [:create]
   end
 end
