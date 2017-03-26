@@ -5,9 +5,4 @@ class Api::TaxonomyController < ApplicationController
     @parent_id = @scientific_name.parent_id
     render 'api/taxonomies/show', status: 200
   end
-
-  private
-  def taxonomy_params
-    params.require(:taxonomy).permit(:name)
-  end
 end
