@@ -42,7 +42,7 @@ namespace :export do
       child_id = line[0]
       parent_id = line[1]
       rank = line[2]
-      puts %Q[ChildParent.create(id: #{child_id}, parent_id: #{parent_id}, rank: '#{rank}')]
+      puts %Q[ChildParent.create(id: #{child_id}, mother_id: #{parent_id}, rank: '#{rank}')]
     end
   end
 end

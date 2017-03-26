@@ -13,3 +13,6 @@ Things I Hmmed and Hawwed over:
 - Where to store the rank (scientific_name or child_parent):
     - It would be best to store it all together in the scientific_names table. That way, every search only has to query one table. I already have to search for the corresponding entry when I set the ancestry. But this gets tricky because my seeds.rb can't hold logic, so I would have to look into how to pass data from rake task > seed file > model.
     - For simplicity and being consistent with the NCBI, it would be best to store with the other data in the nodes.dmp file.
+
+Bug log:
+- parent_id when querying: the parent_id column was not jiving with the parent_id attribute set up by the Ancestry gem. Ancestry does not return in query. Had to rename the column to mother_id.
