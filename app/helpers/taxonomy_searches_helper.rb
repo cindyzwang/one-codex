@@ -1,0 +1,2 @@
+module TaxonomySearchesHelper
+end
