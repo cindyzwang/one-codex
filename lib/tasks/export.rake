@@ -13,7 +13,7 @@ namespace :export do
     n_names = []
 
 
-    File.open(Rails.root.join('lib', 'assets', 'taxdmp', 'abbrev-names.dmp'), 'r').each do |line|
+    File.open(Rails.root.join('lib', 'assets', 'taxdmp', 'names.dmp'), 'r').each do |line|
       line.gsub!("'", %q"\\\'")
       line.gsub!(/[(\t)(\n)]/, '')
       line = line.split('|')
@@ -37,7 +37,7 @@ namespace :export do
 
 
 
-    File.open(Rails.root.join('lib', 'assets', 'taxdmp', 'abbrev-nodes.dmp'), 'r').each do |line|
+    File.open(Rails.root.join('lib', 'assets', 'taxdmp', 'nodes.dmp'), 'r').each do |line|
       line = line.gsub(/[(\t)(\n)]/, '').split('|')
       child_id = line[0]
       parent_id = line[1]
