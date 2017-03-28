@@ -7,7 +7,9 @@ This is not the type of README that I would put in a production project, but I f
 
 ## To Run:
 - `rake db:create db:migrate`
-- make sure the seed.rb file is empty and then `rake export:seed_data > db/seeds.rb`
+- if you want to use the full data set:
+  - go to `lib/tasks/export.rake` and change `abbrev-names.dmp` and `abbrev-nodes.dmp` to `names.dmp` and `nodes.dmp`. (I have .gitignored those files so you will have to download them and place them in this folder)
+- make sure the `db/seeds.rb` file exists and is empty and then `rake export:seed_data > db/seeds.rb`
 - `rake db:seed`
 - `rails s` and go to localhost:3000
 
