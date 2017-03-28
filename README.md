@@ -7,7 +7,7 @@ This is not the type of README that I would put in a production project, but I f
 
 ## To Run:
 - `rake db:create db:migrate`
-- `rake export:seed_data > db/seeds.rb`
+- make sure the seed.rb file is empty and then `rake export:seed_data > db/seeds.rb`
 - `rake db:seed`
 - `rails s` and go to localhost:3000
 
