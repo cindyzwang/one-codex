@@ -5,6 +5,7 @@ class Api::ChildrenController < ApplicationController
                         .descendants
                         .joins("LEFT OUTER JOIN child_parents ON taxonomy_id = child_parents.child_id")
                         .select("taxonomy_id, child_parents.rank, scientific_names.name, child_parents.mother_id")
+                        .limit(25)
     render 'api/family/index'
   end
 end
