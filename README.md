@@ -14,8 +14,6 @@ This is not the type of README that I would put in a production project, but I f
 Some FYIs:
 - `api/taxonomy/<id>/children` is limited to 25 descendants, `api/taxonomy/<id>/parents` is not limited
 - I began to rake db:seed on the ENTIRE data set. I let it run all night but then I decided I just wanted to add a couple of the optional features, so I stopped it and worked on the data that it got through. What I am turning in uses my own abbreviated files that are just a little bit longer than the provided ones.
-- Normally, I would write tests, but I am scared that opening data files will crash my text editor. (I know, I should have done it when I was working on the abbreviated data)
-
 
 Things I learned while completing this project:
 - Atom isn't great with large files
