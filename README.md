@@ -29,4 +29,4 @@ Things I Hmmed and Hawwed over:
 
 Bug log:
 - parent_id when querying: the parent_id column was not jiving with the parent_id attribute set up by the Ancestry gem. Ancestry does not return in query. Had to rename the column to mother_id.
-- CORS
+- CORS: rack-cors gem not working
