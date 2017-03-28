@@ -2,6 +2,10 @@
 
 Rails 5.0.2 with a PostgreSQL database.
 
+
+This is not the type of README that I would put in a production project, but I figured if you wanted to see my notes, then I should make it easy to find.
+
+
 Things I learned while completing this project:
 - Atom isn't great with large files
 - How to create custom rake tasks to write to seeds.rb: seed files can't hold logic, so in order to copy the data from the taxdmp into the database, I had create a rake task that would parse the file and write commands in the seed file.
@@ -16,3 +20,4 @@ Things I Hmmed and Hawwed over:
 
 Bug log:
 - parent_id when querying: the parent_id column was not jiving with the parent_id attribute set up by the Ancestry gem. Ancestry does not return in query. Had to rename the column to mother_id.
+- CORS
